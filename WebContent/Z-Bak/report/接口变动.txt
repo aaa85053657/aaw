@@ -1,0 +1,21 @@
+在ReportParameter实体中加入了defaultValue、selectOptions、defaultSelectOptionKeys和multiSelection
+
+使用方法
+
+在向用户展示填写parameter时：
+1. 如果该parameter的selectOptions不为null，则生成一个table形式的select供其选择，其中数据为selectOptions中的二维数组，每个数组的第一个元素是那个数组对应的option的key
+2. 在满足1的条件下，如果multiSelection为0，则该select是单选的，如果为1则该select是多选的
+3. 在满足1的条件下，如果defaultSelectOptionKeys不为null，设置select的初始值为defaultSelectOptionKeys里的key。defaultSelectOptionKeys里的数据是一个一维数组
+4. 如果1不满足，且该parameter有defaultValue，则输入框初始值设置为defaultValue
+
+多选数据的提交：
+将该参数对应的值替换成一个json数组即可，例如：
+{
+	"paramName1": "paramValue1",
+	"paramName2": "paramValue2",
+	"paramName3": ["paramValue3.1", "paramValue3.2", "paramValue3.3"],
+	"paramName4": "paramValue4",
+}
+
+在ExecuteService中增加一个executeReport的重载方法：executeReport(Report report, JSONObject requestParams, Integer offset, Integer limit)
+前两个参数和之前的用法相同，后两个用于查询分页。

@@ -1,0 +1,62 @@
+body {
+	font-family: Arial, sans-serif;margin:0; padding:0; 
+}
+.loginTop {
+	background-color: #d8f0fe;
+	opacity:0.3;
+	height:20px;
+	top:0px;
+	clear: both;
+}
+.loginBottom
+{
+	position:absolute;bottom:0px; height:20px; width:100%; background-color:#666;clear: both;opacity:0.3;
+}
+.login-panel {
+	width: 940px;
+	height:auto;
+	margin: 0 auto;
+}
+.logo {width:940px; height: 238px; background: url("../images/login01.jpg") no-repeat;}
+.login-error {
+	text-align: center;
+	color: #FF0000;
+	font-size:12px;
+}
+.loginbot {width: 940px; height: 135px; background: url("../images/login05.jpg") no-repeat;}
+.login-form {
+	width: 940px;
+	height:190px;
+	margin: 0 auto;
+	background: url("../images/login03.jpg") no-repeat;}
+}
+.login-form label {
+	color: #fff;
+	display:block;
+	padding-left:10px;
+}
+.form1 {height: 140px; width: 350px; margin: 0 auto;padding-top: 20px;}
+.login-form input  {
+	width: 200px;
+	height:20px;
+	padding: 3px;
+	margin-left:10px;
+	border: 1px solid #666;
+}
+.loginDiv {
+	clear:both;
+	height:40px;
+	line-height: 35px;
+}
+.btnImg {width: 25px;}
+.loginDiv label {width: 120px;display: block; float: left;}
+.loginDiv img {float:left; margin-right:10px;}
+.login-button {
+	height: 34px;
+	width:95px;
+	display: block;
+	text-decoration: none;
+	background: url("../images/login.gif") no-repeat;
+	float:right;
+	margin-right: 10px;
+}

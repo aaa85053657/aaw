@@ -1,0 +1,28 @@
+添加bean:
+
+    @Resource
+    private ReportService reportService;
+
+    @Resource
+    private ExecuteService executeService;
+	
+
+ReportService上的方法：
+
+    public List<Report> fetchReport() {}
+
+    public List<Report> fetchReport(Integer offset, Integer limit) {}
+	
+    public Report retrieveReport(Integer reportId) {}
+	
+    public List<ReportColumn> retrieveReportColumn(Integer reportId) {}
+
+    public List<ReportParameter> retrieveReportParameter(Integer reportId) {}
+	
+ExecuteService上的方法：
+
+    public List<Map<String, Object>> executeReport(Report report, JSONObject requestParams) {}
+
+导出：
+
+    http://localhost:8080/aaw/report/executeReport?reportId=xxx&params={"xxx":"xxx"}

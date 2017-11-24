@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+	<context:component-scan base-package="com.aaw.sys.ctl">
+		<context:include-filter type="annotation"
+			expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+	<mvc:annotation-driven />
+	<mvc:resources location="/WEB-INF/assets/static/"
+		mapping="/static/**" />
+	<mvc:resources location="/WEB-INF/assets/report/static/"
+		mapping="/report/static/**" />
+	<mvc:resources location="/upload/" mapping="/upload/**" />
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<mvc:exclude-mapping path="/static/**" />
+			<mvc:exclude-mapping path="/report/**" />
+			<bean class="molos.plugins.lgcheck.LoginCheck"></bean>
+			<!-- <bean class="cn.molos.interceptor.LoginInterceptor"></bean> -->
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<ref bean="localeChangeInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/WEB-INF/assets/page/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basename" value="classpath:messages" />
+		<property name="useCodeAsDefaultMessage" value="true" />
+		<property name="defaultEncoding" value="UTF-8" />
+		<property name="cacheSeconds" value="10"></property>
+		<!-- <property name="basenames"> -->
+		<!-- <list> -->
+		<!-- <value>classpath:messages</value> -->
+		<!-- </list> -->
+		<!-- </property> -->
+	</bean>
+
+	<bean id="localeChangeInterceptor"
+		class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+		<property name="paramName" value="lang" />
+	</bean>
+	<bean id="localeResolver"
+		class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+		<property name="defaultLocale" value="zh" />
+	</bean>
+
+	<!-- <bean id="handlerMapping" -->
+	<!-- class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping"> -->
+	<!-- <property name="interceptors"> -->
+	<!-- <ref bean="localeChangeInterceptor" /> -->
+	<!-- </property> -->
+	<!-- </bean> -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
+		p:defaultEncoding="utf-8" p:maxUploadSize="2048000" p:resolveLazily="true" />
+	<!--1024*200即200k -->
+	<!-- <property name="maxUploadSize" value="2048000" /> -->
+	<!--resolveLazily属性启用是为了推迟文件解析，以便在UploadAction 中捕获文件大小异常 -->
+	<!-- <property name="resolveLazily" value="true" /> -->
+</beans>

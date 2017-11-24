@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<!-- <property name="packagesToScan" value="com.**.bean" /> -->
+		<property name="packagesToScan" value="com.aaw.bean" />
+		<!-- <property name="packagesToScan"> -->
+		<!-- <list> -->
+		<!-- <value>com.abc.core.bo</value> -->
+		<!-- <value>com.abc.auditing.bo</value> -->
+		<!-- </list> -->
+		<!-- </property> -->
+
+		<!-- <property name="annotatedClasses"> -->
+		<!-- <list> -->
+		<!-- <value>com.aaw.bean.CommandeFlow</value> -->
+		<!-- <value>com.aaw.bean.CommandePriority</value> -->
+		<!-- <value>com.aaw.bean.CommandeStatus</value> -->
+		<!-- <value>com.aaw.bean.CommandeType</value> -->
+		<!-- <value>com.aaw.bean.Country</value> -->
+		<!-- <value>com.aaw.bean.CustomerInfo</value> -->
+		<!-- <value>com.aaw.bean.DeliveryAddress</value> -->
+		<!-- <value>com.aaw.bean.Employee</value> -->
+		<!-- <value>com.aaw.bean.LogException</value> -->
+		<!-- <value>com.aaw.bean.LogInoutsys</value> -->
+		<!-- <value>com.aaw.bean.MainCommande</value> -->
+		<!-- <value>com.aaw.bean.MetaProcedure</value> -->
+		<!-- <value>com.aaw.bean.MetaProcedureConfig</value> -->
+		<!-- <value>com.aaw.bean.ProductAttribute</value> -->
+		<!-- <value>com.aaw.bean.ProductComponent</value> -->
+		<!-- <value>com.aaw.bean.ProductElement</value> -->
+		<!-- <value>com.aaw.bean.ProductModel</value> -->
+		<!-- <value>com.aaw.bean.ProductModelConfig</value> -->
+		<!-- <value>com.aaw.bean.ProductionLine</value> -->
+		<!-- <value>com.aaw.bean.ProductionLineConfig</value> -->
+		<!-- <value>com.aaw.bean.Profile</value> -->
+		<!-- <value>com.aaw.bean.ProfileType</value> -->
+		<!-- <value>com.aaw.bean.RoleAssetsConfig</value> -->
+		<!-- <value>com.aaw.bean.SlaveCommande</value> -->
+		<!-- <value>com.aaw.bean.SlaveCommandeConfig</value> -->
+		<!-- <value>com.aaw.bean.UpmsAccount</value> -->
+		<!-- <value>com.aaw.bean.UpmsAssets</value> -->
+		<!-- <value>com.aaw.bean.UpmsRole</value> -->
+		<!-- <value>com.aaw.bean.CommandeStatusTemp</value> -->
+		<!-- </list> -->
+		<!-- </property> -->
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.format_sql">false</prop>
+				<prop key="hibernate.jdbc.fetch_size">50</prop>
+				<prop key="hibernate.jdbc.batch_size">25</prop>
+				<prop key="hibernate.temp.use_jdbc_metadata_defaults">false</prop>
+				<!-- <prop key="hibernate.hbm2ddl.auto" >create</prop> -->
+				<!-- 开启二级缓存 -->
+				<!-- <prop key="cache.use_second_level_cache">true</prop> -->
+				<!-- <prop key="hibernate.cache.use_query_cache">true</prop> -->
+				<!-- <prop key="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</prop> -->
+				<!-- <prop key="hibernate.cache.region.factory_class">org.hibernate.cache.EhCacheRegionFactory</prop> -->
+			</props>
+		</property>
+	</bean>
+</beans>

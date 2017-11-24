@@ -1,0 +1,8 @@
+{
+    "INVAILD_LOGIN": 5, 
+    "CONTINUE_SCAN": 10, 
+    "SELECT_TIME": 10, 
+    "PROCESS_DONE": 3, 
+    "ORDER_BEGIN": 5,
+    "LOCK_TIME":15
+}

@@ -1,0 +1,6 @@
+INVAILD_LOGIN：	无效登录倒计时
+CONTINUE_SCAN:	 继续扫描倒计时
+SELECT_TIME:	选择时间倒计时
+PROCESS_DONE:	工序结束倒计时
+ORDER_BEGIN:	订单开始倒计时
+LOCK_TIME:		锁定时长

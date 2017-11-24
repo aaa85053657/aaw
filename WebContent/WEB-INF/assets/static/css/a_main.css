@@ -1,0 +1,5 @@
+.navlist {padding:0; margin:0;}
+.navlist li {height: 25px; line-height: 25px;}
+.navlist li a span.nav {display:block; font-size:14px; float:left;}
+.navlist li a:hover span.nav {color:#ff6600;}
+.navlist li a span.icon {display:block;  float:left; width:16px;margin-left:6px;}

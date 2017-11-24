@@ -1,0 +1,23 @@
+#fm div, #fmAddr div {
+	height: 30px;
+}
+
+#fm div label, #fmAddr div label, #fmCus div label {
+	width: 100px;
+	float: left;
+}
+
+#fm .leftDIv, #fm-cfg .leftDIv, #fmAddr .leftDIv, #fmCus .leftDIv {
+	float: left;
+	width: 50%;
+}
+
+#fm .leftDIv div, #fmAddr .leftDIv div, #fmCus .leftDIv div {
+	height: 30px;
+}
+
+#fm .leftDIv div label, #fmAddr .leftDIv div label, #fmCus .leftDIv div label
+	{
+	width: 100px;
+	float: left;
+}

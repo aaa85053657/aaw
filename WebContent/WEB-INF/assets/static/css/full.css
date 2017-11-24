@@ -1,0 +1,122 @@
+.clear {
+	height: 0px;
+	line-height: 0px;
+	font-size: 0px;
+	clear: both;
+}
+
+.subnav {
+	height: 27px;
+	background: url(../images/index-subnav-bg.gif);
+	line-height: 27px;
+	position: absolute;
+	top: 51px;
+	left: 0;
+	width: 100%;
+	z-index: 10;
+}
+
+.subnav .fleft {
+	color: #075587;
+	width: 95%;
+}
+
+.rightSpan {
+	float: right;
+	display: block;
+}
+
+.subnav .subnavLeft {
+	width: 17px;
+	height: 27px;
+	background: url(../images/index-subnav-left.gif);
+}
+
+.subnav .subnavRight {
+	width: 17px;
+	height: 27px;
+	background: url(../images/index-subnav-right.gif);
+}
+
+.fleft {
+	float: left;
+}
+
+.fright {
+	float: right;
+}
+
+.layout-panel-west {
+	left: 5px;
+}
+
+.panel .datagrid {
+	margin: 5px 5px;
+}
+
+.myFieldset {
+	margin: 10px 5px;
+	border: 1px solid #95B8E7;
+}
+
+.navlist li {
+	list-style: none;
+	height: 25px;
+	line-height: 20px;
+}
+
+.navlist li a {
+	color: #06C;
+	text-decoration: none;
+	display: block;
+	padding-left: 32px;
+}
+
+/*add css style 2014/3/21*/
+.navlist {
+	margin: 0;
+	padding: 0;
+	margin-top: 10px;
+}
+
+.navlist li {
+	display: block;
+}
+
+.hover {
+	background-color: #EAF2FF;
+}
+
+.selected {
+	background-color: #FBEC88;
+}
+
+.navlist li div {
+	height: 25px;
+	line-height: 25px;
+}
+/*add css style 20140516*/
+.head {
+	float: right;
+	height: 50px;
+	line-height: 50px;
+	width: 500px;
+}
+
+.wel, .head a {
+	float: left;
+	width: 90px;
+	font-size: 14px;
+	color: #fff;
+	text-decoration: none;
+	margin-right: 10px;
+}
+
+.head a:hover {
+	text-decoration: underline;
+}
+
+.head a img {
+	float: left;
+	padding-top: 14px;
+}
